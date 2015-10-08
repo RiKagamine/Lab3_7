@@ -1,0 +1,16 @@
+__author__ = 'Rin'
+# -*- coding: utf-8 -*
+from functools import reduce
+from operator import mul
+from math import pow
+L = []
+N = int(input('Скільки чисел ви хочете ввести? '))
+if N == 0:
+    print('Тоді чому ви запускаєте програму?..')
+    quit()
+for x in range(N):
+    A = int(input('Введіть число: '))
+    L.append(A)
+A1 = reduce(mul, L)
+A2 = pow(A1, 1 / N)
+print('Середнє геометричне: ' + str(A2))
