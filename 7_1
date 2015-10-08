@@ -1,0 +1,4 @@
+__author__ = 'Rin'
+import math
+for x in range(20):
+    print(math.sin(x))
