@@ -1,0 +1,111 @@
+__author__ = 'student'
+# -*- coding: utf-8 -*
+import math
+# 1
+
+
+def lab1():
+    for x in range(20):
+        print(math.sin(x))
+    return  x
+
+# 2
+
+
+def lab2():
+    from functools import reduce
+    from operator import mul
+    L = []
+    N = int(input('Скільки чисел ви хочете ввести? '))
+    if N == 0:
+        print('Введіть значення, відмінне від нуля.')
+        quit()
+    for x in range(N):
+        A = int(input('Введіть число: '))
+        L.append(A)
+    A1 = reduce(mul, L)
+    A2 = pow(A1, 1 / N)
+
+    return print('Середнє геометричне: ' + str(A2))
+
+# 3
+
+
+def lab3():
+    sum = 0
+    xs = 0
+    xf = 5
+    sum_old = sum
+
+    for x in range(xs, xf + 1):
+        k = 1
+        while True:
+            sum = -1 ** k * x ** (2 * k) / k ** x * (k + 1) * (k + 2)
+
+            if sum_old == sum:
+                break
+            sum_old = sum
+            k = k + 1
+    return print(sum)
+
+# 4
+
+
+def lab4():
+    for x in range(-10, 0):
+        x1 = x + 1
+        print(str(abs(x)) + ' green bottles hanging on the wall, ')
+        print(str(abs(x)) + ' green bottles hanging on the wall, ')
+        print('And if one green bottle should accidentally fall, ')
+        print('There’ll be ' + str(abs(x1)) + ' green bottles hanging on the wall. ')
+
+
+# 5
+
+
+def lab5():
+    a = 2 ** 64 - 1
+    b = float(input("Введіть масу одного зернятка (в грамах): "))
+    m = a * b * 1000
+    return print("Загальна маса зерен в кілограмах: " + str(m))
+
+# 6
+
+
+def lab6():
+    import sys
+    import time
+    for x in range(101):
+        sys.stdout.flush()
+        time.sleep(0.1)
+        return sys.stdout.write("\rProgress: " + '\u2655' * x)
+# 7
+
+
+def lab7():
+    n = 10
+    x = []
+    for i in range (2, n + 1):
+        x.append(i)
+    pr = x[0]
+    x.remove(pr)
+    xt = tuple(x)
+    print(pr)
+    for i in xt:
+        if x[i] % pr == 0:
+            x.remove(x[i])
+    return x
+ans = input(int("Ввведіть номер завдання (1-10):"))
+if ans == 1:
+    print(lab1())
+elif ans == 2:
+    print(lab2()
+elif ans == 3:
+    print(lab3()
+elif ans == 4:
+    print(lab4()
+elif ans == 5:
+    print(lab5())
+
+
+    
