@@ -112,7 +112,7 @@ def lab7():
     del a
     return b
 
-ans = input("Введіть номер завдання (1-7): ")
+ans = input("Введіть номер завдання (1-7) або введіть 'exit' для виходу: ")
 if ans == '1':
     print(lab1())
 elif ans == '2':
@@ -127,6 +127,8 @@ elif ans == '6':
     print(lab6())
 elif ans == '7':
     print(lab7())
+elif ans == 'exit':
+    quit()
 else:
     print('Введіть коректне значення!')
     quit()
