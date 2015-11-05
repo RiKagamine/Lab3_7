@@ -56,9 +56,9 @@ def lab3():
 def lab4():
     for x in range(-10, 0):
         x1 = x + 1
-        a = (str(abs(x)) + ' green bottles hanging on the wall,\n ')
-        b = (str(abs(x)) + ' green bottles hanging on the wall,\n ')
-        c = ('And if one green bottle should accidentally fall,\n ')
+        a = (str(abs(x)) + ' green bottles hanging on the wall,\n')
+        b = (str(abs(x)) + ' green bottles hanging on the wall,\n')
+        c = ('And if one green bottle should accidentally fall,\n')
         d = ('There’ll be ' + str(abs(x1)) + ' green bottles hanging on the wall. ')
         return str(a) + str(b) + str(c) + str(d)
 
@@ -69,7 +69,7 @@ def lab5():
     a = 2 ** 64 - 1
     b = float(input("Введіть масу одного зернятка (в грамах): "))
     m = a * b * 1000
-    return print("Загальна маса зерен в кілограмах: " + str(m))
+    return ("Загальна маса зерен в кілограмах: " + str(m))
 
 # 6
 
@@ -77,11 +77,11 @@ def lab5():
 def lab6():
     import sys
     import time
-    for x in range(101):
+    for x in range(100):
         sys.stdout.flush()
+        sys.stdout.write("\rProgress: " + '-' * x)
         time.sleep(0.1)
-        a = sys.stdout.write("\rProgress: " + '\u2655' * x)
-        return a
+    return '-'
 # 7
 
 
