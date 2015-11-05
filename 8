@@ -1,13 +1,15 @@
 __author__ = 'student'
 # -*- coding: utf-8 -*
+
 import math
+
 # 1
 
 
 def lab1():
     for x in range(20):
         print(math.sin(x))
-    return  x
+    return x
 
 # 2
 
@@ -26,7 +28,7 @@ def lab2():
     A1 = reduce(mul, L)
     A2 = pow(A1, 1 / N)
 
-    return print('Середнє геометричне: ' + str(A2))
+    return ('Середнє геометричне: ' + str(A2))
 
 # 3
 
@@ -46,7 +48,7 @@ def lab3():
                 break
             sum_old = sum
             k = k + 1
-    return print(sum)
+    return sum
 
 # 4
 
@@ -54,11 +56,11 @@ def lab3():
 def lab4():
     for x in range(-10, 0):
         x1 = x + 1
-        print(str(abs(x)) + ' green bottles hanging on the wall, ')
-        print(str(abs(x)) + ' green bottles hanging on the wall, ')
-        print('And if one green bottle should accidentally fall, ')
-        print('There’ll be ' + str(abs(x1)) + ' green bottles hanging on the wall. ')
-
+        a = (str(abs(x)) + ' green bottles hanging on the wall,\n ')
+        b = (str(abs(x)) + ' green bottles hanging on the wall,\n ')
+        c = ('And if one green bottle should accidentally fall,\n ')
+        d = ('There’ll be ' + str(abs(x1)) + ' green bottles hanging on the wall. ')
+        return str(a) + str(b) + str(c) + str(d)
 
 # 5
 
@@ -78,34 +80,53 @@ def lab6():
     for x in range(101):
         sys.stdout.flush()
         time.sleep(0.1)
-        return sys.stdout.write("\rProgress: " + '\u2655' * x)
+        a = sys.stdout.write("\rProgress: " + '\u2655' * x)
+        return a
 # 7
 
 
 def lab7():
-    n = 10
-    x = []
-    for i in range (2, n + 1):
-        x.append(i)
-    pr = x[0]
-    x.remove(pr)
-    xt = tuple(x)
-    print(pr)
-    for i in xt:
-        if x[i] % pr == 0:
-            x.remove(x[i])
-    return x
-ans = input(int("Ввведіть номер завдання (1-10):"))
-if ans == 1:
+    n = int(input("Введіть число, до якого необхідно дорахувати прості числа: "))
+    a = [0] * n
+    for i in range(n):
+        a[i] = i
+
+
+    a[1] = 0
+
+    m = 2
+    while m < n:
+        if a[m] != 0:
+            j = m * 2
+            while j < n:
+                a[j] = 0
+                j = j + m
+        m += 1
+
+
+    b = []
+    for i in a:
+        if a[i] != 0:
+            b.append(a[i])
+
+    del a
+    return b
+
+ans = input("Введіть номер завдання (1-7): ")
+if ans == '1':
     print(lab1())
-elif ans == 2:
-    print(lab2()
-elif ans == 3:
-    print(lab3()
-elif ans == 4:
-    print(lab4()
-elif ans == 5:
+elif ans == '2':
+    print(lab2())
+elif ans == '3':
+    print(lab3())
+elif ans == '4':
+    print(lab4())
+elif ans == '5':
     print(lab5())
-
-
-    
+elif ans == '6':
+    print(lab6())
+elif ans == '7':
+    print(lab7())
+else:
+    print('Введіть коректне значення!')
+    quit()
