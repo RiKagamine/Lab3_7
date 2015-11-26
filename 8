@@ -7,9 +7,9 @@ import math
 
 
 def lab1():
-    for x in range(20):
+    for x in range(1, 20):
         print(math.sin(x))
-    return x
+    return math.sin(21)
 
 # 2
 
@@ -56,11 +56,11 @@ def lab3():
 def lab4():
     for x in range(-10, 0):
         x1 = x + 1
-        a = (str(abs(x)) + ' green bottles hanging on the wall,\n')
-        b = (str(abs(x)) + ' green bottles hanging on the wall,\n')
-        c = ('And if one green bottle should accidentally fall,\n')
-        d = ('There’ll be ' + str(abs(x1)) + ' green bottles hanging on the wall. ')
-        return str(a) + str(b) + str(c) + str(d)
+        print(str(abs(x)) + ' green bottles hanging on the wall,\n')
+        print(str(abs(x)) + ' green bottles hanging on the wall,\n')
+        print('And if one green bottle should accidentally fall,\n')
+        print('There’ll be ' + str(abs(x1)) + ' green bottles hanging on the wall. ')
+    return
 
 # 5
 
@@ -112,23 +112,25 @@ def lab7():
     del a
     return b
 
-ans = input("Введіть номер завдання (1-7) або введіть 'exit' для виходу: ")
-if ans == '1':
-    print(lab1())
-elif ans == '2':
-    print(lab2())
-elif ans == '3':
-    print(lab3())
-elif ans == '4':
-    print(lab4())
-elif ans == '5':
-    print(lab5())
-elif ans == '6':
-    print(lab6())
-elif ans == '7':
-    print(lab7())
-elif ans == 'exit':
-    quit()
-else:
-    print('Введіть коректне значення!')
-    quit()
+
+ans = 0
+while ans != 'exit':
+    ans = input("Введіть номер завдання (1-7) або введіть 'exit' для завершення програми: ")
+    if ans == 'exit':
+        quit()
+    if ans == '1':
+        print(lab1())
+    elif ans == '2':
+        print(lab2())
+    elif ans == '3':
+        print(lab3())
+    elif ans == '4':
+        print(lab4())
+    elif ans == '5':
+        print(lab5())
+    elif ans == '6':
+        print(lab6())
+    elif ans == '7':
+        print(lab7())
+    else:
+        print('Введіть коректне значення!')
